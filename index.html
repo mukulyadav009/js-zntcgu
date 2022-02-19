@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="CodePen" />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico"
+    />
+
+    <link
+      rel="mask-icon"
+      type="image/x-icon"
+      href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+      color="#111"
+    />
+
+    <title>CodePen - Portfolio 2022</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Page 2022 Alexino2 Update</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      html,
+      body,
+      main {
+        height: 100%;
+      }
+
+      /* ****** NAVBAR ****** */
+
+      .custom-nav {
+        padding: 0;
+        transition: all 0.2s ease-in;
+      }
+
+      .custom-nav-brand {
+        font-size: 1.6rem;
+      }
+
+      .custom-nav a {
+        font-weight: 600;
+      }
+
+      .custom-nav a:hover,
+      .custom-nav a:focus {
+        color: #1abc9c;
+      }
+
+      .custom-nav-collapse a {
+        padding: 0.8rem 1.2rem !important;
+      }
+
+      .custom-nav .active,
+      .custom-nav a.active:hover,
+      .custom-nav a.active:focus {
+        color: #fff;
+        background-color: #1abc9c;
+      }
+
+      /* ****** FONTAWESOME ICONS ****** */
+
+      .custom-cover-goto i,
+      .custom-folio i:nth-child(1),
+      .custom-social i {
+        color: #16a085;
+      }
+
+      .custom-nav-toggle i:hover,
+      .custom-nav-toggle i:focus,
+      .custom-cover-goto i:hover,
+      .custom-social i:hover {
+        color: #1abc9c;
+      }
+
+      .custom-nav-toggle:focus {
+        box-shadow: none;
+      }
+
+      .custom-nav-toggle i {
+        font-size: 1.4rem;
+        color: #fff;
+      }
+
+      .custom-cover-goto i {
+        font-size: 6rem;
+      }
+
+      .custom-folio span {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        text-decoration: none;
+        line-height: 1.72222;
+        background-color: #ffffff;
+        border: 2px solid #bdc3c7;
+        border-radius: 6px;
+        -webkit-transition: border 0.25s ease-custom-out;
+        transition: border 0.25s ease-custom-out;
+        margin-bottom: 1rem;
+      }
+
+      .custom-folio i {
+        font-size: 5rem;
+        padding: 1rem;
+      }
+
+      .custom-folio i:nth-child(1) {
+        flex: 1 0 auto;
+      }
+
+      .custom-folio i:nth-child(2) {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        background: #1abc9c;
+        opacity: 0;
+        transition: all 0.2s ease-in;
+      }
+
+      .custom-folio i:nth-child(2):hover {
+        opacity: 1;
+        transition: all 0.2s ease-in;
+      }
+
+      .custom-social i {
+        font-size: 2.5rem;
+      }
+
+      /* ******    PADDING    ****** */
+
+      .custom-py-8 {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+      }
+
+      /* ******    TEXT  ****** */
+
+      .custom-text h1,
+      .custom-text h2,
+      .custom-text h3,
+      .custom-text h4,
+      .custom-text h5 {
+        font-weight: 600;
+      }
+
+      .custom-text h1 {
+        font-size: 4rem;
+      }
+      .custom-text h2 {
+        font-size: 3.4rem;
+      }
+      .custom-text h3 {
+        font-size: 2.5rem;
+      }
+      .custom-text h4 {
+        font-size: 2rem;
+      }
+      .custom-text h5 {
+        font-size: 1.5rem;
+      }
+
+      .custom-text p {
+        font-weight: 300;
+        font-size: 1.3rem;
+      }
+
+      /* ******    BACKGROUND   ****** */
+
+      .custom-bg-dark,
+      .custom-bg-dark a,
+      .custom-bg-darker,
+      .custom-cover {
+        color: #fff;
+      }
+
+      .custom-bg-dark {
+        background-color: #34495e;
+      }
+
+      .custom-bg-grey {
+        color: #34495e;
+        background-color: #eee;
+      }
+
+      .custom-bg-darker {
+        background: #2c3e50;
+      }
+
+      .custom-cover {
+        display: flex;
+        background: url(https://static.pexels.com/photos/36487/above-adventure-aerial-air-large.jpg)
+          no-repeat center center/cover fixed;
+        height: 100%;
+        position: relative;
+      }
+
+      .custom-cover > * {
+        width: 100%;
+      }
+
+      /* ******    POP UP PORTFOLIO   ****** */
+
+      .custom-folio-pop {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        overflow-y: scroll;
+      }
+
+      .custom-folio-pop-btn a {
+        margin: 0.5rem 2rem;
+        padding: 0.6rem 3rem;
+        font-size: 1.2rem;
+      }
+    </style>
+
+    <script>
+      window.console = window.console || function (t) {};
+    </script>
+
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage('resize', '*');
+      }
+    </script>
+  </head>
+
+  <body translate="no">
+    <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+      <nav
+        id="nav"
+        class="
+          navbar navbar-expand-md
+          fixed-top
+          bg-transparent
+          custom-nav custom-bg-dark
+        "
+      >
+        <div class="container-lg">
+          <a class="navbar-brand custom-nav-brand" href="#">Mukul</a>
+          <button
+            class="navbar-toggler custom-nav-toggle"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target=".collapse"
+            aria-controls="navbar"
+            aria-expanded="false"
+          >
+            <i class="fas fa-align-justify"></i>
+            <!-- Toggle icon -->
+          </button>
+          <div class="collapse navbar-collapse custom-nav-collapse">
+            <ul class="navbar-nav ms-auto">
+              <li><a class="nav-link" href="#about">About</a></li>
+              <li><a class="nav-link" href="#folio">Portfolio</a></li>
+              <li><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <main class="custom-text">
+        <!-- Cover -->
+        <div class="custom-cover">
+          <div class="container text-center align-self-center">
+            <h1>Mukul</h1>
+            <p>Mechanincal00 engineer</p>
+            <hr class="bg-transparent" />
+            <a href="#about" class="custom-cover-goto">
+              <i class="fas fa-caret-down"></i>
+              <!-- Triangle icon -->
+            </a>
+          </div>
+        </div>
+
+        <!-- About -->
+        <div id="about" class="custom-bg-grey custom-py-8">
+          <div class="container text-center">
+            <h2>About</h2>
+            <br />
+            <p>
+              Hi, yo name's Alex - I'm a Software engineer and Vue core team
+              member
+            </p>
+            <p>I enjoy playing squash, tennis, and football.</p>
+            <img
+              src="https://2.gravatar.com/avatar/e71155c8ed35fb40c1047fd0046b02de?s=100&r=pg&d=mm"
+              alt="Edd Yerburgh"
+              class="img-fluid rounded-circle"
+            />
+          </div>
+        </div>
+
+        <!-- Portolio -->
+        <div id="folio" class="custom-folio custom-bg-dark custom-py-8">
+          <div class="container text-center">
+            <div class="row">
+              <h2>Portfolio</h2>
+              <hr class="bg-transparent" />
+              <div class="col-sm">
+                <span>
+                  <i class="fas fa-vial"></i>
+                  <i class="fas fa-info-circle" page="folio_avoriaz"></i>
+                </span>
+              </div>
+              <div class="col-sm">
+                <span>
+                  <i class="fab fa-vuejs"></i>
+                  <i class="fas fa-info-circle" page="folio_utils"></i>
+                </span>
+              </div>
+              <div class="col-sm">
+                <span>
+                  <i class="fas fa-book"></i>
+                  <i class="fas fa-info-circle" page="folio_book"></i>
+                </span>
+              </div>
+              <div class="col-sm">
+                <span>
+                  <i class="fas fa-rss"></i>
+                  <i class="fas fa-info-circle" page="folio_blog"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div id="contact" class="custom-bg-grey custom-py-8">
+          <div class="container text-center">
+            <div class="m-auto w-75">
+              <h2>Get In Touch</h2>
+              <hr class="bg-transparent" />
+              <form
+                action="mailto:edward.yerburgh@gmail.com"
+                enctype="text/plain"
+                method="post"
+              >
+                <div class="mb-3">
+                  <label for="InputEmail" class="form-label"
+                    >Email address</label
+                  >
+                  <input
+                    id="contact_email"
+                    type="email"
+                    class="form-control"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea
+                    id="contact_message"
+                    class="form-control"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <input type="submit" name="submit" class="btn btn-secondary" />
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="custom-bg-dark">
+          <div class="container py-4 text-center">
+            <div class="row">
+              <div class="col-md">
+                <h3>Location</h3>
+                <p>London</p>
+              </div>
+              <div class="col-md custom-social">
+                <h3>Connect With Me</h3>
+                <ul class="list-inline pt-2">
+                  <li class="list-inline-item">
+                    <a href="https://github.com/eddyerburgh" target="newwindow">
+                      <i class="fab fa-github-alt"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a
+                      href="https://www.linkedin.com/in/edd-yerburgh-74aa5768"
+                      target="newwindow"
+                    >
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a
+                      href="https://twitter.com/EddYerburgh"
+                      target="newwindow"
+                    >
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md">
+                <h3>Hire Me</h3>
+                <p>I'm available for workshops</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="custom-bg-darker">
+            <div class="container text-center py-1">
+              Copyright © Alexino2 2022 (update from Edd Yerburgh 2016)
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden portfolio icon's click -->
+        <div id="folio_pop" class="custom-folio-pop custom-bg-grey">
+          <div class="container text-center align-self-center">
+            <div id="folio_pop_content"></div>
+            <hr class="bg-transparent" />
+            <div class="custom-folio-pop-btn">
+              <a
+                id="folio_pop_link"
+                class="btn btn-secondary"
+                target="_blank"
+                href=""
+                >View</a
+              >
+              <a id="folio_pop_close" class="btn btn-danger">Close</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden portfolio dynamic content (insert above) -->
+        <div class="d-none">
+          <div id="folio_avoriaz">
+            <span> <h5>Avoriaz is Vue testing utility library.</h5> </span>
+            <span>https://github.com/eddyerburgh/avoriaz</span>
+          </div>
+          <div id="folio_utils">
+            <span>
+              <h5>The official Vue testing library.</h5>
+              <hr class="bg-transparent" />
+              <p>I'm the lead author and maintainer of Vue Test Utils.</p>
+            </span>
+            <span>https://github.com/vuejs/vue-test-utils</span>
+          </div>
+          <div id="folio_book">
+            <span>
+              <h5>Testing Vue.js Applications</h5>
+              <hr class="bg-transparent" />
+              <p>Learn how to test Vue.js applications with my book.</p>
+            </span>
+            <span
+              >https://www.manning.com/books/testing-vue-js-applications</span
+            >
+          </div>
+          <div id="folio_blog">
+            <span> <h5>My personal blog</h5> </span>
+            <span>https://eddyerburgh.me/</span>
+          </div>
+        </div>
+      </main>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+      <script src="./app.js"></script>
+    </body>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+    <script id="rendered-js">
+      // Smooth Scrolling for internal links
+      $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+
+        var target = this.hash;
+        var $target = $(target);
+
+        $('html, body')
+          .stop()
+          .animate(
+            {
+              scrollTop: $target.offset().top,
+            },
+            900,
+            'swing',
+            function () {
+              window.location.hash = target;
+            }
+          );
+      });
+
+      var toogleNavScroll = function () {
+        var scroll = $(window).scrollTop();
+        var isScroll = scroll > window.innerHeight - 55;
+        if (isScroll) $('#nav').removeClass('bg-transparent');
+        else $('#nav').addClass('bg-transparent');
+      };
+
+      // Change background of nav bar on scroll
+      $(window).scroll(function () {
+        toogleNavScroll();
+      });
+
+      // Correct bug when nav is loading in the middle of page
+      $(window).ready(function () {
+        toogleNavScroll();
+      });
+
+      // Open the portfolio pop up
+      $('#folio i:nth-child(2)').click(function () {
+        // Second icon
+        var id = '#' + $(this).attr('page');
+        $('#folio_pop_content').html($(id + ' span:nth-child(1)').html()); // First folio span
+        $('#folio_pop_link').attr('href', $(id + ' span:nth-child(2)').html()); // Second folio span
+        $('#folio_pop').css('display', 'flex').hide().fadeIn();
+      });
+
+      // Close the portfolio pop up
+      $('#folio_pop_close').click(function () {
+        $('#folio_pop').fadeOut();
+      });
+      //# sourceURL=pen.js
+    </script>
+  </body>
+</html>
